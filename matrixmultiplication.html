@@ -13,20 +13,30 @@
 
 	function yukle() {
 
-
-		satır1=prompt("Satır sayısını giriniz");
-		sutun1=prompt("sutun sayısnını griniz");
-
-		dizi1=new Array(satır1);
+		while(true){
+			satır1=prompt("Satır sayısını giriniz");
+			if(isNaN(satır1) || satır1.match("[a-zA-Z]+")){
+				alert("Lütfen Satır Değerleri Sayı Giriniz...");
+			}
+			else{
+				dizi1=new Array(satır1);
+				break;
+			}
+		}
+		while(true){
+			sutun1=prompt("sutun sayısnını griniz");
+			if(isNaN(sutun1) || sutun1.match("[a-zA-Z]+")){
+				alert("Lütfen Sutun Değerleri Sayı Giriniz...");
+			}
+			else{
+				break;
+			}
+		}
 
 		var anadiv=document.createElement("div");
 		document.body.appendChild(anadiv);
 		anadiv.setAttribute("style","float:left;background-color:aquamarine;margin-right:10px;")
 
-		if(isNaN(satır1) || satır1=="" || sutun1=="" || isNaN(sutun1)){
-			alert("Lütfen Satır ve Sütun Değerlerini Sayı Giriniz...");
-		}
-		else{
 			for (var i = 0; i < satır1; i++) {
 				dizi1[i]=new Array(sutun1);
 				var satırdiv=document.createElement("div");
@@ -44,22 +54,28 @@
 					}
 						divsutun.textContent=dizi1[i][j];
 						divsutun.setAttribute("style","float:left;border:1px solid gray;width:30px;height:30px");
-					
-
-
-
 					}
-				}
 
 			alert("İKİNCİ MATRİSİ GİRİNİZ");
-			satır2=prompt("Satır sayısını giriniz");
-			sutun2=prompt("sutun sayısnını griniz");
-				if(isNaN(satır2) || satır2=="" || sutun2=="" || isNaN(sutun2)){
-					alert("Lütfen Satır ve Sütun Değerlerini Sayı Giriniz...");
+			while(true){
+				satır2=prompt("Satır sayısını giriniz");
+				if(isNaN(satır2) || satır2.match("[a-zA-Z]+")){
+					alert("Lütfen Satır Değerleri Sayı Giriniz...");
 				}
 				else{
-				dizi2=new Array(satır2);
-
+					dizi2=new Array(satır2);
+					break;
+				}
+			}
+			while(true){
+				sutun2=prompt("sutun sayısnını griniz");
+				if(isNaN(sutun2) || sutun2.match("[a-zA-Z]+")){
+					alert("Lütfen Sutun Değerleri Sayı Giriniz...");
+				}
+				else{
+					break;
+				}
+			}
 				var anadiv=document.createElement("div");
 				document.body.appendChild(anadiv);
 				anadiv.setAttribute("style","float:left;background-color:aqua;margin-right:10px;")
@@ -86,7 +102,7 @@
 
 						}
 					}
-				}
+
 
 
 
